@@ -1,0 +1,44 @@
+.panel-body a{
+    text-decoration: none;
+}
+.panel {
+    border-radius: unset;
+}
+.table{
+    margin-bottom: 0;
+}
+#id_title{
+    width: 100%;
+}
+.category-box,
+.tag-box{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.category-title,
+.tag-title{
+    width: 100%;
+    background-color: #B0C4DE;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+td{
+    display: block;
+    float: left;
+    margin-right: 20px;
+}
+button{
+    background-color: #8B7D6B;
+    font-weight: bold!important;
+}
+button:hover{
+    background-color: white;
+    color: #d9534f!important;
+    border: 1px solid #d9534f;
+}
+.edit-box{
+    padding-bottom: 20px;
+}
+.sweet-alert>h2{
+    margin-top: 30px;
+}

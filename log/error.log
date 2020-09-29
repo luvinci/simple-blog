@@ -1,0 +1,34 @@
+[2020-09-29 17:00:01,908][Thread-29:1864][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /blog/backend/]
+Traceback (most recent call last):
+  File "C:\Pd\Python37\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Pd\Python37\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Pd\Python37\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Pd\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Pd\项目\pdsite\blog\views.py", line 198, in backend_article
+    blog = user.blog
+  File "C:\Pd\Python37\lib\site-packages\django\utils\functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+  File "C:\Pd\Python37\lib\site-packages\django\db\models\fields\related_descriptors.py", line 407, in __get__
+    self.related.get_accessor_name()
+django.db.models.fields.related_descriptors.RelatedObjectDoesNotExist: UserInfo has no blog.
+[2020-09-29 17:00:08,783][Thread-35:10940][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /blog/backend/]
+Traceback (most recent call last):
+  File "C:\Pd\Python37\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Pd\Python37\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Pd\Python37\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Pd\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Pd\项目\pdsite\blog\views.py", line 198, in backend_article
+    blog = user.blog
+  File "C:\Pd\Python37\lib\site-packages\django\utils\functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+  File "C:\Pd\Python37\lib\site-packages\django\db\models\fields\related_descriptors.py", line 407, in __get__
+    self.related.get_accessor_name()
+django.db.models.fields.related_descriptors.RelatedObjectDoesNotExist: UserInfo has no blog.

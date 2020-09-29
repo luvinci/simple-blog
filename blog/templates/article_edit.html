@@ -1,0 +1,77 @@
+{% extends "backend_base.html" %}
+{% load my_tags %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/sweetalert/sweetalert.css">
+    <link rel="stylesheet" href="/static/blog/css/article_add.css">
+{% endblock %}
+
+{% block side-bar %}
+    <div class="panel panel-info">
+        <div class="panel-heading">操作</div>
+        <div class="panel-body">
+            <div><a href="/blog/article/add/">添加新文章</a></div>
+        </div>
+    </div>
+
+    <div class="panel panel-warning">
+        <div class="panel-heading">分类</div>
+        <div class="panel-body">
+            {% backend_side_bar request.user.username %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <div class="edit-box">
+        {% csrf_token %}
+        <div id="article-info" art-id="{{ article.pk }}" art-title="{{ article.title }}" art-content="{{ content }}" art-category-id="{{ article.category_id }}" art-tag-list="{{ tag_list }}"></div>
+        <div class="title">
+            <label for="id_title">标题</label><br>
+            <input type="text" id="id_title" name="title">
+        </div>
+        <div class="content">
+            <label for="id_editor">内容</label><br>
+            <textarea name="content" id="id_editor"></textarea>
+        </div>
+        <div class="category-box">
+            <div class="category-title">分类</div>
+            <table>
+                <tbody>
+                    <tr class="clearfix">
+                        {% for category in categories %}
+                        <td>
+                            <input type="radio" id="category-{{ category.id }}" class="category-item" name="category" value="{{ category.id }}">
+                            <label for="category-{{ category.id }}">{{ category.name }}</label>
+                        </td>
+                        {% endfor %}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="tag-box">
+            <div class="tag-title">标签</div>
+            <table>
+                <tbody>
+                    <tr class="clearfix">
+                        {% for tag in tags %}
+                        <td>
+                            <input type="checkbox" id="tag-{{ tag.id }}" name="tags" value="{{ tag.id }}">
+                            <label for="tag-{{ tag.id }}">{{ tag.name }}</label>
+                        </td>
+                        {% endfor %}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button type="button" class="btn">发布</button>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script src="/static/kindeditor/kindeditor-all-min.js"></script>
+    <script src="/static/sweetalert/sweetalert.min.js"></script>
+    <script src="/static/blog/js/article_edit.js"></script>
+{% endblock %}
+
+

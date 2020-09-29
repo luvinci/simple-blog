@@ -1,0 +1,26 @@
+body{
+    background-color:rgb(220,220,220);
+}
+.navbar-inverse{
+    background-color: #4F4F4F;
+    border: none;
+}
+img {
+    height: 34px;
+}
+.signin {
+    margin-top: 240px;
+}
+.navbar-brand{
+    font-weight: bolder;
+}
+.nav li a{
+    font-weight: bold;
+}
+.username .pull-right,
+.password .pull-right{
+    color: red;
+}
+div a{
+    text-decoration: none!important;
+}

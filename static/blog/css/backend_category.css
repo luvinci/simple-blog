@@ -1,0 +1,16 @@
+a{
+    text-decoration: none!important;
+}
+#edit-category,
+#add-category{
+    background-color: #E6E6FA;
+    font-size: 18px;
+}
+#add-cate-box,
+#add-btn{
+    margin-top: 5px;
+}
+
+#edit-cate-box{
+    margin-bottom: 20px;
+}

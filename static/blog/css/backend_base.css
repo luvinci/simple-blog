@@ -1,0 +1,53 @@
+.con {
+    padding: 0;
+    margin-top: 20px;
+}
+/*navbar*/
+.navbar-inverse {
+    margin-bottom: 0;
+    border-radius: unset;
+    background-color: #4F4F4F;
+    border: none;
+}
+/*字体*/
+.navbar-brand {
+    font-weight: bolder;
+}
+.nav li a {
+    font-weight: bold;
+}
+.navbar ul {
+    float: right;
+}
+@media (max-width: 800px) {
+    .navbar ul {
+        float: none;
+    }
+}
+/*side-bar*/
+.side-bar {
+    width: 150px;
+    float: left;
+}
+/*main*/
+.main {
+    width: calc(100% - 150px);
+    float: left;
+    border: 1px solid rgb(220, 220, 220);
+}
+.main-title,
+.main-content{
+    padding: 10px;
+}
+.main-title a{
+    display: block;
+    float: left;
+    text-decoration: none;
+    padding: 4px 8px;
+    margin-right: 10px;
+    background-color: #8B7D7B;
+    color: white;
+}
+.main-title a:hover{
+    color: black;
+}

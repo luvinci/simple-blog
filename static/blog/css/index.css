@@ -1,0 +1,132 @@
+.navbar-inverse{
+    background-color: #4F4F4F;
+    border: none;
+}
+/*清除浮动*/
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+/*navbar*/
+.navbar-inverse{
+    margin-bottom: 0;
+    border-radius: unset;
+}
+/*字体*/
+.navbar-brand{
+    font-weight: bolder;
+}
+.nav li a{
+    font-weight: bold;
+}
+.navbar ul{
+    float: right;
+}
+@media (max-width: 800px){
+    .navbar ul{
+        float: none;
+    }
+}
+/*横图*/
+.bar-img img{
+    width: 100%;
+    max-height: 300px;
+}
+@media (max-width: 800px){
+    .bar-img img{
+        width: 100%;
+        height: 100%;
+    }
+}
+/*main*/
+.content{
+    width: 70%;
+    float: left;
+}
+.side-bar{
+    width: 30%;
+    float: left;
+}
+@media (max-width: 800px) {
+    .content{
+        width: 100%;
+        float: none;
+    }
+    .side-bar{
+        width: 50%;
+        float: none;
+        margin-top: 100px;
+    }
+}
+/*content*/
+.main{
+    margin-top: 30px;
+}
+.article-item{
+    margin-bottom: 16px;
+    margin-right: 20px;
+    border-bottom: 1px solid rgb(220, 220, 220);
+}
+.article-item .title{
+    margin-bottom: 5px;
+}
+.article-item .title a{
+    font-size: 18px;
+    font-weight: bolder;
+    text-decoration: none;
+}
+.article-item img{
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 10px;
+}
+.article-item .desc #desc{
+    display: inline;
+    line-height: 1.5;
+}
+.article-item .info{
+    padding-top: 8px;
+    padding-bottom: 4px;
+}
+.article-item .info div{
+    display: inline;
+}
+.article-item .info div a{
+    text-decoration: none;
+}
+
+/*side-bar*/
+.side-bar .author-info {
+    border: 1px solid rgb(220,220,220);
+}
+.side-bar .author-info .c1{
+    width: 100%;
+}
+.side-bar .author-info .c1 img{
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+.side-bar .author-info .about {
+    height: 36px;
+    background-color: rgb(230, 230, 230);
+    padding: 8px 16px;
+    font-weight: bold;
+}
+.side-bar .author-info .c1 img,
+.side-bar .author-info .c1 .name{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.side-bar .author-info .c1 .name{
+    text-align: center;
+    font-weight: bold;
+}
+.side-bar .author-info .c1 .motto{
+    margin: 8px 16px;
+}
+

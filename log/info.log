@@ -1,0 +1,53 @@
+[2020-09-09 23:15:08,632][Thread-6:4304][task_id:django.request][base.py:152][WARNING][Not Found: /static/blog/css/signin.css]
+[2020-09-09 23:15:08,826][Thread-8:7692][task_id:django.request][base.py:152][WARNING][Not Found: /static/blog/js/signin.js]
+[2020-09-09 23:15:11,369][Thread-9:10340][task_id:django.request][base.py:152][WARNING][Not Found: /static/blog/css/signin.css]
+[2020-09-09 23:15:11,455][Thread-12:8840][task_id:django.request][base.py:152][WARNING][Not Found: /static/blog/js/signin.js]
+[2020-09-09 23:15:22,950][Thread-14:9060][task_id:django.request][base.py:152][WARNING][Not Found: /static/blog/css/signup.css]
+[2020-09-09 23:15:22,983][Thread-16:1612][task_id:django.request][base.py:152][WARNING][Not Found: /static/blog/js/signup.js]
+[2020-09-09 23:15:23,113][Thread-17:10828][task_id:django.request][base.py:152][WARNING][Not Found: /static/blog/js/signup.js]
+[2020-09-09 23:15:32,872][Thread-18:10328][task_id:django.request][base.py:152][WARNING][Not Found: /static/blog/css/signup.css]
+[2020-09-09 23:15:32,894][Thread-20:8692][task_id:django.request][base.py:152][WARNING][Not Found: /static/blog/js/signup.js]
+[2020-09-09 23:15:33,028][Thread-21:9056][task_id:django.request][base.py:152][WARNING][Not Found: /static/blog/js/signup.js]
+[2020-09-09 23:15:36,257][Thread-23:2564][task_id:django.request][base.py:152][WARNING][Not Found: /static/blog/css/signup.css]
+[2020-09-09 23:15:36,378][Thread-24:11052][task_id:django.request][base.py:152][WARNING][Not Found: /static/bootstrap/css/bootstrap.min.css.map]
+[2020-09-09 23:15:48,028][Thread-25:9876][task_id:django.request][base.py:152][WARNING][Not Found: /static/blog/css/signup.css]
+[2020-09-09 23:15:48,055][Thread-27:9524][task_id:django.request][base.py:152][WARNING][Not Found: /static/blog/js/signup.js]
+[2020-09-09 23:15:48,230][Thread-28:6672][task_id:django.request][base.py:152][WARNING][Not Found: /static/bootstrap/css/bootstrap.min.css.map]
+[2020-09-09 23:15:48,277][Thread-29:7204][task_id:django.request][base.py:152][WARNING][Not Found: /static/blog/js/signup.js]
+[2020-09-09 23:15:52,584][Thread-32:10588][task_id:django.request][base.py:152][WARNING][Not Found: /static/bootstrap/css/bootstrap.min.css.map]
+[2020-09-09 23:15:53,551][Thread-31:7860][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]
+[2020-09-29 17:00:01,908][Thread-29:1864][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /blog/backend/]
+Traceback (most recent call last):
+  File "C:\Pd\Python37\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Pd\Python37\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Pd\Python37\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Pd\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Pd\项目\pdsite\blog\views.py", line 198, in backend_article
+    blog = user.blog
+  File "C:\Pd\Python37\lib\site-packages\django\utils\functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+  File "C:\Pd\Python37\lib\site-packages\django\db\models\fields\related_descriptors.py", line 407, in __get__
+    self.related.get_accessor_name()
+django.db.models.fields.related_descriptors.RelatedObjectDoesNotExist: UserInfo has no blog.
+[2020-09-29 17:00:02,564][Thread-30:2872][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]
+[2020-09-29 17:00:08,783][Thread-35:10940][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /blog/backend/]
+Traceback (most recent call last):
+  File "C:\Pd\Python37\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Pd\Python37\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Pd\Python37\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Pd\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Pd\项目\pdsite\blog\views.py", line 198, in backend_article
+    blog = user.blog
+  File "C:\Pd\Python37\lib\site-packages\django\utils\functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+  File "C:\Pd\Python37\lib\site-packages\django\db\models\fields\related_descriptors.py", line 407, in __get__
+    self.related.get_accessor_name()
+django.db.models.fields.related_descriptors.RelatedObjectDoesNotExist: UserInfo has no blog.

@@ -1,0 +1,12 @@
+a{
+    text-decoration: none!important;
+}
+#edit-tag,
+#add-tag{
+    background-color: #E6E6FA;
+    font-size: 18px;
+}
+#add-tag-box,
+#add-btn{
+    margin-top: 5px;
+}

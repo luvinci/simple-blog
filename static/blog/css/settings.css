@@ -1,0 +1,32 @@
+.panel-body a{
+    text-decoration: none;
+}
+.panel {
+    border-radius: unset;
+}
+.table{
+    margin-bottom: 0;
+}
+#nickname-box .panel-heading,
+#password-box .panel-heading{
+    font-weight: bold;
+    background-color: #BC8F8F;
+}
+#btn-password{
+    margin-top: 5px;
+}
+#btn-nickname,
+#btn-password{
+    background-color: #4F94CD;
+    color: white;
+    border: 1px solid #4F94CD;
+}
+#btn-nickname:hover,
+#btn-password:hover{
+    background-color: white;
+    border: 1px solid #FF3030;
+    color: #FF3030;
+}
+.sweet-alert>h2{
+    padding-top: 8px;
+}

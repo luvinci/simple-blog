@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../media/images/favicon.ico">
+    <title>用户注册</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/sweetalert/sweetalert.css">
+    <link rel="stylesheet" href="../static/blog/css/signup.css">
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">首页</a>
+        </div>
+
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/signin">登录</a></li>
+                <li><a href="https://home.cnblogs.com/u/believepd/" target="_blank">关于我</a></li>
+                <li><a href="https://github.com/luvinci" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+<div class="container reg-box">
+    <div class="row">
+        <div class="col-sm-4 col-md-4 col-sm-offset-4 col-md-offset-4">
+            <div class="title">注册新用户</div>
+            <div id="line"></div>
+            <form action="" method="post" novalidate>
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ form.nickname.id_for_label }}">{{ form.nickname.label }}</label>
+                    {{ form.nickname }}<span class="error pull-right"></span>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
+                    {{ form.username }}<span class="error pull-right"></span>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
+                    {{ form.password }}<span class="error pull-right"></span>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.confirm_password.id_for_label }}">{{ form.confirm_password.label }}</label>
+                    {{ form.confirm_password }}<span class="error pull-right"></span>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                    {{ form.email }}<span class="error pull-right"></span>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary btn-block">注册</button>
+                </div>
+                <div>
+                    <span>注册即表示您同意并愿意遵守<a href="/agreement.html">用户协议</a>。</span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../static/jquery-3.3.1.min.js"></script>
+<script src="../static/bootstrap/js/bootstrap.min.js"></script>
+<script src="../static/sweetalert/sweetalert.min.js"></script>
+<script src="../static/blog/js/signup.js"></script>
+</body>
+</html>
+

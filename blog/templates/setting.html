@@ -1,0 +1,54 @@
+{% extends "backend_base.html" %}
+{% load my_tags %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/sweetalert/sweetalert.css">
+    <link rel="stylesheet" href="/static/blog/css/settings.css">
+{% endblock %}
+
+{% block side-bar %}
+    <div class="panel panel-info">
+        <div class="panel-heading">操作</div>
+        <div class="panel-body">
+            <div><a href="/blog/article/add/">添加新文章</a></div>
+        </div>
+    </div>
+
+    <div class="panel panel-warning">
+        <div class="panel-heading">分类</div>
+        <div class="panel-body">
+            {% backend_side_bar request.user.username %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block main %}
+    {% csrf_token %}
+    <div id="nickname-box">
+        <div class="panel panel-default">
+            <div class="panel-heading">修改昵称</div>
+            <div class="panel-body">
+                <label for="id-nickname">显示昵称：</label>
+                <input type="text" id="id-nickname" onblur="checkNickname()">
+                <button type="button" id="btn-nickname">保存</button>
+            </div>
+        </div>
+    </div>
+    <div id="password-box">
+        <div class="panel panel-default">
+            <div class="panel-heading">修改密码</div>
+            <div class="panel-body">
+                <label for="id-password">新密码：</label><br>
+                <input type="password" id="id-password" onblur="checkPassword(this)"><br>
+                <label for="id-confirm-password">确认密码：</label><br>
+                <input type="password" id="id-confirm-password" onblur="checkConfirmPassword(this)"><br>
+                <button type="button" id="btn-password">保存</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script src="/static/sweetalert/sweetalert.min.js"></script>
+    <script src="/static/blog/js/settings.js"></script>
+{% endblock %}

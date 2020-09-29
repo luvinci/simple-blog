@@ -1,0 +1,119 @@
+{% extends "lay_out.html" %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/sweetalert/sweetalert.css">
+    <link rel="stylesheet" href="/static/blog/css/article_detail.css">
+{% endblock %}
+
+{% block backtotop %}
+    <img src="/media/images/backtotop.png" id="back-to-top">
+{% endblock %}
+
+{% block content %}
+    <div class="content clearfix">
+        <div class="article">
+            <div class="title">{{ article.title }}</div>
+            <div class="detail">{{ article.articledetail.content|safe }}</div>
+        </div>
+
+        <div class="sort">
+                所属分类：
+                <a href="/blog/{{ article.blog.user.username }}/categoryid/{{ article.category.id }}">{{ article.category.name }}</a>
+        </div>
+
+        <div class="profile-upDown clearfix">
+            <div class="userProfile clearfix">
+                <a href="/blog/{{ article.blog.user.username }}"><img src="/{{ article.blog.user.avatar }}"></a>
+                <div>{{ article.blog.user.nickname }}</div>
+            </div>
+
+            <div class="upDown clearfix">
+                <div class="thumbs-down thumb">
+                    <div class="num">{{ article.down_count }}</div>
+                    <div class="thumbs"><span><i class="fa fa-thumbs-down">反对</i></span></div>
+                </div>
+                <div class="thumbs-up thumb">
+                    <div class="num">{{ article.up_count }}</div>
+                    <div class="thumbs"><span><i class="fa fa-thumbs-up">推荐</i></span></div>
+                </div>
+                <div class="msg"></div>
+            </div>
+        </div>
+        <div class="next-prev">
+            {% if prev_article %}
+                <div>上一篇：<a href="/blog/{{ article.blog.user.username }}/articles/{{ prev_article.id }}/">{{ prev_article.title }}</a></div>
+            {% else %}
+                <div>上一篇：没有了</div>
+            {% endif %}
+
+            {% if next_article %}
+                <div>下一篇：<a href="/blog/{{ article.blog.user.username }}/articles/{{ next_article.id }}/">{{ next_article.title }}</a></div>
+            {% else %}
+                <div>下一篇：没有了</div>
+            {% endif %}
+        </div>
+        <div class="info">
+            <span>
+                <i class="fa fa-clock-o">&nbsp;posted</i>
+            </span>
+            <span>
+                &nbsp;@
+                {{ article.publish_time|date:"Y-m-d H:i" }}
+            </span>
+            <span>
+                &nbsp;
+                <i class="fa fa-commenting">评论({{ article.comment_count }})</i>
+            </span>
+            <span>
+                &nbsp;
+                <i class="fa fa-thumbs-up">点赞(<span id="zan">{{ article.up_count }}</span>)</i>
+            </span>
+            {% if request.user.nickname == nickname %}
+                <span>
+                    &nbsp;<a href="/blog/article/edit/{{ article.pk }}"><i class="fa fa-edit (alias)">编辑</i></a>
+                </span>
+            {% endif %}
+        </div>
+        {# 在点赞和回复中，利用空元素在页面中不显示，借助其属性值判断用户是否登录 #}
+        {# 在Django中，对于未登录用户，其默认名称为：AnonymousUser #}
+        <div id="is-login" user="{{ request.user }}" article_id="{{ article.id }}" avatar="{{ request.user.avatar }}" username="{{ request.user.username }}" pk ="{{ request.user.pk }}"></div>
+        {% csrf_token %}
+
+        <div class="comment-box"> {# 评论区 #}
+            <div class="comment-title">评论</div>
+            <div class="comment-content">
+                {% for comment in comments %}
+                    <div class="comment-item clearfix">
+                        <div class="avatar"><a href="/blog/{{ comment.user.username }}"><img src="/{{ comment.user.avatar }}"></a></div>
+                        <div class="con">
+                            <div class="clearfix">
+                                <div class="user"><span>{{ comment.comment_time|date:"Y-m-d H:i" }}</span><a href="/blog/{{ comment.user.username }}">{{ comment.user.username }}</a></div>
+                                <div class="reply">
+                                    <a href="javascript:void(0);" username="{{ comment.user.username }}" pk="{{ comment.user.pk }}">
+                                        <i class="fa fa-comment-o">&nbsp;回复</i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="reply-con">{{ comment.content }}</div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="comment-input">
+            <div>你想说点什么：</div>
+            <textarea name="comment_content" id="id_editor"></textarea>
+            <button type="button" class="btn btn-info">发表评论</button>
+        </div> {# 评论输入框 #}
+
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script src="/static/kindeditor/kindeditor-all-min.js"></script>
+    <script src="/static/sweetalert/sweetalert.min.js"></script>
+    <script src="/static/blog/js/article_detail.js"></script>
+    <script src="/static/blog/js/back_to_top.js"></script>
+{% endblock %}
+

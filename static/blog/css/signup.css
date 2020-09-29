@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+}
+.navbar-inverse{
+    background-color: #4F4F4F;
+    border: none;
+}
+.reg-box{
+    margin-top: 70px;
+}
+.navbar-brand{
+    font-weight: bolder;
+}
+.nav li a{
+    font-weight: bold;
+}
+.title{
+    color: #228B22;
+    font-size: 18px;
+    font-weight: bold;
+}
+#line{
+    border: 1px solid grey;
+    margin-top: 2px;
+    margin-bottom: 40px;
+}
+/*sweet-alert*/
+.sweet-alert>h2{
+    padding-top: 5px;
+}

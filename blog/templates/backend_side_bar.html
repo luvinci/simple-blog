@@ -1,0 +1,5 @@
+<div><a href="/blog/backend/categoryid/0">未分类</a></div>
+{% for category in categories %}
+    <div class="category-item"><a href="/blog/backend/categoryid/{{ category.2 }}/">{{ category.0 }}({{ category.1 }})</a></div>
+{% endfor %}
+

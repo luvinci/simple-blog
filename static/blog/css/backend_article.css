@@ -1,0 +1,12 @@
+.panel-body a{
+    text-decoration: none;
+}
+.panel {
+    border-radius: unset;
+}
+.table{
+    margin-bottom: 0;
+}
+a{
+    text-decoration: none!important;
+}

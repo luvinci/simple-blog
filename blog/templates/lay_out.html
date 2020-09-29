@@ -1,0 +1,61 @@
+{% load my_tags  %}
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/media/images/favicon.ico">
+    <title>{{ nickname }} - 博客</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
+    {% block css %}
+    {% endblock %}
+</head>
+<body>
+
+<div class="container clearfix">
+    <div class="header">
+        <div class="blog-title">{{ nickname }}'s blog</div>
+    </div>
+
+    <div class="nav-list clearfix">
+        <div class="nav clearfix">
+            <a href="/">首页</a>
+            {% if request.user.username %}
+                <a href="/blog/{{ request.user.username }}">我的首页</a>
+            {% else %}
+                <a href="/signin">我的首页</a>
+            {% endif %}
+            <a href="/blog/article/add">新文章</a>
+            {% if request.user.username %}
+                <a href="/blog/backend">管理</a>
+            {% else %}
+                <a href="/signin">管理</a>
+            {% endif %}
+        </div>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+   <div class="side-bar">
+        <div class="profile">
+            <div class="title">公告</div>
+            <div>昵称：{{ nickname }}</div>
+            <div>园龄：{% usage_time username %}天</div>
+        </div>
+        {% get_side_bar request username %}
+   </div>
+ </div>
+
+{% block backtotop %}
+{% endblock %}
+
+<script src="/static/jquery-3.3.1.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+{% block js %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,229 @@
+/*header*/
+.header{
+    width: 100%;
+    border-bottom: 1px solid rgb(220,220,220);
+}
+.header .blog-title{
+    color: #404040;
+    font-family: Georgia;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+/*nav*/
+.nav-list{
+    width: 100%;
+    border-bottom: 1px solid rgb(220,220,220);
+}
+.nav-list .nav a{
+    display: block;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    margin-right: 32px;
+}
+.nav-list .nav a:hover{
+    color: #2aabd2;
+}
+/*content*/
+.content {
+    width: 70%;
+    float: left;
+    margin-top: 16px;
+    padding-right: 8px;
+}
+.content .article .title{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 8px;
+    text-align: center;
+}
+.content .article .detail{
+    margin-top: 16px;
+    line-height: 1.5;
+}
+.content .sort{
+    margin-top: 30px;
+}
+.content .sort a{
+    text-decoration: none;
+    background-color: rgb(231, 231, 231);
+    border-radius: 50px;
+    padding: 5px 8px;
+}
+.content .sort a:hover{
+    text-decoration: none;
+    background-color: rgb(33, 117, 155);
+    border-radius: 50px;
+    padding: 5px 8px;
+}
+.content .profile-upDown{
+    margin-top: 16px;
+}
+.content .profile-upDown .userProfile{
+    width: 50%;
+    margin-top: 0;
+    float: left;
+}
+.content .profile-upDown .userProfile a{
+    display: block;
+}
+.content .profile-upDown .userProfile img,
+.content .profile-upDown .userProfile a{
+    height: 50px;
+}
+.content .profile-upDown .userProfile div{
+    height: 50px;
+}
+.content .profile-upDown .userProfile a,
+.content .profile-upDown .userProfile div{
+    float: left;
+    margin-right: 10px;
+}
+.content .profile-upDown .upDown{
+    height: 70px;
+    float: right;
+}
+.content .profile-upDown .upDown .thumbs-up,
+.content .profile-upDown .upDown .thumbs-down{
+    width: 50px;
+    float: right;
+}
+.content .profile-upDown .upDown .thumbs-up{
+    margin-right: 25px;
+}
+.content .profile-upDown .upDown .thumbs-down{
+    margin-left: 25px;
+}
+.content .profile-upDown .upDown .thumbs-down .num{
+    text-align: center;
+    background-color: rgb(207, 207, 207);
+}
+.content .profile-upDown .upDown .thumbs-up .num{
+    text-align: center;
+    background-color: rgb(207, 207, 207);
+}
+.content .profile-upDown .upDown .thumbs-down .thumbs{
+    background-color: rgb(217, 83, 79);
+    text-align: center;
+}
+.content .profile-upDown .upDown .thumbs-up .thumbs{
+    background-color: rgb(91, 192, 222);
+    text-align: center;
+}
+.content .profile-upDown .upDown .msg{
+    text-align: center;
+    margin-top: 50px;
+}
+.content .info{
+    margin-top: 8px;
+}
+.content .info a{
+    text-decoration: none;
+}
+/*comment*/
+.comment-box{
+    margin-top: 30px;
+}
+.comment-title {
+    font-size: 18px;
+    text-align: center;
+    opacity: 0.8;
+    border-bottom: 1px solid grey;
+}
+.comment-content{
+    margin-top: 20px;
+}
+.comment-content .comment-item{
+    padding-top: 8px;
+    margin-bottom: 20px;
+    border-top: 1px dashed grey;
+}
+.comment-content .comment-item .avatar{
+    float: left;
+}
+.comment-content .comment-item .avatar img{
+    height: 50px;
+    width: 50px;
+}
+.comment-content .comment-item .con{
+    width: calc(100% - 50px);
+    float: left;
+}
+.comment-content .comment-item .con .user{
+    float: left;
+}
+.comment-content .comment-item .con .reply{
+    float: right;
+}
+.comment-content .comment-item .con .user span{
+    padding-left: 8px;
+}
+.comment-content .comment-item .con .user a{
+    margin-left: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Georgia;
+}
+.comment-content .comment-item .con .reply a{
+    text-decoration: none;
+}
+.comment-content .comment-item .con .reply-con{
+    padding-left: 8px;
+}
+.content .comment-input{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.content .comment-input div{
+    font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.content .comment-input #id_editor{
+    width: 100%;
+    height: 80px;
+}
+/*side-bar*/
+.side-bar{
+    width: 30%;
+    float: left;
+}
+@media (max-width: 800px) {
+    .content{
+        width: 100%;
+        float: none;
+    }
+    .side-bar{
+        width: 50%;
+        float: none;
+    }
+}
+.profile,
+.tag,
+.category,
+.archive{
+    margin-top: 16px;
+    border: 1px solid rgb(220,220,220);
+    padding: 8px;
+}
+.side-bar .title{
+    font-size: 15px;
+    font-weight: bold;
+}
+.side-bar div a{
+    text-decoration: none;
+}
+/*back_to_top*/
+#back-to-top{
+    position: fixed;
+    bottom:20px;
+    right: 20px;
+}

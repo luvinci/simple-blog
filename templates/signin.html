@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../media/images/favicon.ico">
+    <title>用户登录</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/blog/css/signin.css">
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">首页</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/signup">注册</a></li>
+                <li><a href="https://home.cnblogs.com/u/believepd/" target="_blank">关于我</a></li>
+                <li><a href="https://github.com/luvinci" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container signin">
+    <div class="row">
+        <form class="form-horizontal col-sm-4 col-md-4 col-lg-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
+            {% csrf_token %}
+            <div class="form-group username">
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-user fa-fw"></i></div>
+                    <input type="text" class="form-control" id="username" placeholder="账号">
+                </div>
+                <div class="pull-right hidden">请输入账号</div>
+            </div>
+            <div class="form-group password">
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-key fa-fw"></i></div>
+                    <input type="password" class="form-control" id="password" placeholder="密码">
+                </div>
+                <div class="pull-right hidden">请输入密码</div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <input id="valid_code" type="text" class="form-control" placeholder="请输入验证码">
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <img id="valid_img" src="/validcode">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <button type="button" class="btn btn-success btn-block" id="sign-in">登录</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../static/jquery-3.3.1.min.js"></script>
+<script src="../static/bootstrap/js/bootstrap.min.js"></script>
+<script src="../static/blog/js/signin.js"></script>
+</body>
+</html>
